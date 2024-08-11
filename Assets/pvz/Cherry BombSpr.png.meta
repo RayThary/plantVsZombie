@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: 3c44be79d334fed42a3bcbb0dfb40650
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 82
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6ee1e128a0c1443a03c0f505a7b745
+      internalID: 847578664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 94
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48249de65e79de548bb4491088b7ed61
+      internalID: 754961897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 92
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1526173a97d73a428ea4e5c8ed70edc
+      internalID: -405673986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_6
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 0
+        width: 94
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0c2aef6cd15ef418d7ad3e72280861
+      internalID: 921684387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 2
+        width: 91
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288b6f3157ef9484c969f1a09855ac77
+      internalID: -619393734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_13
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 0
+        width: 87
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2634cf8628661ea42b96197dbe26c0c5
+      internalID: 1327498313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 66
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b20474db08f3d842acb30668c03406e
+      internalID: -439557287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_21
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a69627945338e49bd3965271e66801
+      internalID: 1771041641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_0: -1806255713
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_1: 1544675445
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_10: 368315090
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_11: -1120541994
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_12: 2121830889
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_13: 1327498313
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_14: -439557287
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_15: 1980297566
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_16: 1355333418
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_17: -1729841835
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_18: -1786600392
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_19: 634231428
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_2: 1311716642
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_20: 1222352973
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_21: 1771041641
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_22: -388819660
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_23: 1213500363
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_24: 959299793
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_25: -1275747732
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_26: -115361401
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_27: -1867520095
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_28: 1627634208
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_3: 847578664
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_4: 754961897
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_5: -405673986
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_6: 921684387
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_7: -619393734
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_8: 174609964
+      DS DSi - Plants vs Zombies - Cherry Bomb-Photoroom_9: 1228838008
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
