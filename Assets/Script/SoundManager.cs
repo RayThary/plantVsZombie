@@ -11,7 +11,13 @@ public class SoundManager : MonoBehaviour
 
     public enum Clips
     {
+        groan,
+        groan2,
         groan3,
+        groan4,
+        groan5,
+        groan6,
+        lawnmower,
     }
 
     [SerializeField] private AudioSource m_backGroundSource;
@@ -53,17 +59,9 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    public Transform s;
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SFXCreate(Clips.groan3, 1, 0,s);
-        }
-    }
     private void initPoolingClip()
     {
-        for(int i = 0; poolingCount > i; i++)
+        for (int i = 0; poolingCount > i; i++)
         {
             GameObject sfx = Instantiate(SFXsource);
             sfx.transform.SetParent(parentTrs);
@@ -87,13 +85,13 @@ public class SoundManager : MonoBehaviour
     /// <param name="_clip">荤侩瞪 家府</param>
     /// <param name="_volum">家府狼 农扁</param>
     /// <param name="_SFXTime">家府狼 农扁</param>
-    public void SFXCreate(Clips _clip, float _volum, float _SFXTime,Transform _parent)
+    public void SFXCreate(Clips _clip, float _volum, float _SFXTime, Transform _parent)
     {
         AudioClip clip = clips.Find(x => x.name == _clip.ToString());
-        StartCoroutine(SFXPlaying(clip, _volum, _SFXTime,_parent));
+        StartCoroutine(SFXPlaying(clip, _volum, _SFXTime, _parent));
     }
 
-    IEnumerator SFXPlaying(AudioClip clip, float _volum, float _SFXTime,Transform _parent)
+    IEnumerator SFXPlaying(AudioClip clip, float _volum, float _SFXTime, Transform _parent)
     {
         GameObject SFXSource = getPoolingObject(_parent);
 
@@ -108,7 +106,7 @@ public class SoundManager : MonoBehaviour
         yield return new WaitForSeconds(clip.length);
         removePooling(SFXSource);
     }
-    
+
     private GameObject getPoolingObject(Transform _parent)
     {
         int parentCount = parentTrs.childCount;
@@ -116,7 +114,7 @@ public class SoundManager : MonoBehaviour
         if (parentCount > 0)
         {
             obj = parentTrs.GetChild(0).gameObject;
-            
+
         }
         else
         {

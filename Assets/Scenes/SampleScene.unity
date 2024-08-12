@@ -411,7 +411,7 @@ RectTransform:
   - {fileID: 1775581463}
   - {fileID: 87496243}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2182,7 +2182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76f7b4cdc18e5a429c782898d2e6ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lawnMower: {fileID: 0}
 --- !u!61 &379689405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2889,7 +2888,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435353842
 GameObject:
@@ -4607,7 +4606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5069,7 +5068,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &712742769
 GameObject:
@@ -6172,7 +6171,7 @@ Transform:
   m_Children:
   - {fileID: 746342178}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981006486
 GameObject:
@@ -6496,7 +6495,7 @@ Transform:
   - {fileID: 1851317733}
   - {fileID: 846789963}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035391883
 GameObject:
@@ -6689,7 +6688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76f7b4cdc18e5a429c782898d2e6ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lawnMower: {fileID: 0}
 --- !u!61 &1038378388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7029,7 +7027,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76f7b4cdc18e5a429c782898d2e6ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lawnMower: {fileID: 0}
 --- !u!61 &1151905041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7246,37 +7243,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1182118264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1182118265}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1182118265
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182118264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14015198, y: 0.85239375, z: 0.07557678}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1186225313
 GameObject:
   m_ObjectHideFlags: 0
@@ -7459,7 +7425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76f7b4cdc18e5a429c782898d2e6ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lawnMower: {fileID: 0}
 --- !u!61 &1212317774
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8471,7 +8436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_plant: {fileID: 3147487603740274844, guid: d5f02fb0305bec7429af6f7c0ecb7559, type: 3}
-  m_plantSpr: {fileID: 21300000, guid: 37b12d680ab2561488999eb8e6a034c0, type: 3}
+  m_plantSpr: {fileID: 21300000, guid: 23e97315bf2d8a74d894a16385ae714e, type: 3}
   m_price: 50
   m_image: {fileID: 1416144906}
   buyCoolTime: 5
@@ -8726,54 +8691,6 @@ Transform:
   m_Father: {fileID: 1035345079}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1469684864
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1469684866}
-  - component: {fileID: 1469684865}
-  m_Layer: 0
-  m_Name: PoolingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1469684865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469684864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6f85e3bb5fd0e4d812407c949d8456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listPoolingClip:
-  - clip: {fileID: 5421157769573103320, guid: ffdcf63fcc259874bb4d756bce505ccd, type: 3}
-    count: 10
-    description: 
---- !u!4 &1469684866
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469684864}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1496537951
 GameObject:
   m_ObjectHideFlags: 0
@@ -8916,7 +8833,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1501079754
 GameObject:
@@ -11369,7 +11286,7 @@ Transform:
   - {fileID: 609110487}
   - {fileID: 648014461}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1851317732
 GameObject:
@@ -12670,9 +12587,14 @@ MonoBehaviour:
   m_BackGroundClip: {fileID: 8300000, guid: 84e78c449c0094d4fb12bbcee8494328, type: 3}
   SFXsource: {fileID: 5421157769573103320, guid: ffdcf63fcc259874bb4d756bce505ccd, type: 3}
   clips:
+  - {fileID: 8300000, guid: 9b91a8a5f28a5b743a80437d2c94fa52, type: 3}
+  - {fileID: 8300000, guid: 6f174ebe095d8b349bfd47a83e661106, type: 3}
   - {fileID: 8300000, guid: f1747d535df4e1b4987c1d389fa07fbf, type: 3}
+  - {fileID: 8300000, guid: 798cd310c89b0714a81f89ca0945c108, type: 3}
+  - {fileID: 8300000, guid: 55236393ef0de9f41a03f88cfaf1bad5, type: 3}
+  - {fileID: 8300000, guid: 4368091a399ad2645ad0cedc079d4d7b, type: 3}
+  - {fileID: 8300000, guid: 521e891477e6be5448d6bca6c3f9f858, type: 3}
   poolingCount: 10
-  s: {fileID: 1182118265}
 --- !u!4 &2032982374
 Transform:
   m_ObjectHideFlags: 0
@@ -12687,7 +12609,7 @@ Transform:
   m_Children:
   - {fileID: 1901401249}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2032982375
 AudioSource:
@@ -13311,7 +13233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76f7b4cdc18e5a429c782898d2e6ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lawnMower: {fileID: 0}
 --- !u!61 &2088934067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13394,7 +13315,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1377320388817199539, guid: dd8f1dc85bf56214687ebd2a5c6cea3f, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1377320388817199539, guid: dd8f1dc85bf56214687ebd2a5c6cea3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13440,7 +13361,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombie1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3252819471250629607, guid: dd8f1dc85bf56214687ebd2a5c6cea3f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

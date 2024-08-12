@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator zombieSwpan()
     {
+        //좀비 소환쿨타임 
         yield return new WaitForSeconds(2);
 
         for (int i = 0; i < monsterMax; i++)

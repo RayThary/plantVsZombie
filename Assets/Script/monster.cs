@@ -57,6 +57,10 @@ public class monster : MonoBehaviour
         box2d = GetComponent<BoxCollider2D>();
         sprControl = GetComponent<SpriteControl>();
         beforeMoveSpeed = moveSpeed;
+
+        float time = Random.Range(1, 5);
+
+        InvokeRepeating("groan", time, 20);
     }
 
     void Update()
@@ -69,6 +73,7 @@ public class monster : MonoBehaviour
         }
         move();
         attack();
+        
     }
 
     private void move()
@@ -103,6 +108,35 @@ public class monster : MonoBehaviour
             isMoving = true;
             anim.SetBool("Attack", false);
         }
+    }
+
+    private void groan()
+    {
+        int random = Random.Range(0, 6);
+
+        switch (random) 
+        {
+            case 0:
+                SoundManager.instance.SFXCreate(SoundManager.Clips.groan, 1, 0, transform);
+                break;
+            case 1:
+                SoundManager.instance.SFXCreate(SoundManager.Clips.groan2, 1, 0, transform);
+                break;
+            case 2:
+                SoundManager.instance.SFXCreate(SoundManager.Clips.groan3, 1, 0, transform);
+                break;
+            case 3:
+                SoundManager.instance.SFXCreate(SoundManager.Clips.groan4, 1, 0, transform);
+                break;
+            case 4:
+                SoundManager.instance.SFXCreate(SoundManager.Clips.groan5, 1, 0, transform);
+                break;
+            case 5:
+                SoundManager.instance.SFXCreate(SoundManager.Clips.groan6, 1, 0, transform);
+                break;
+
+        }
+
     }
 
     private void HitPlant()

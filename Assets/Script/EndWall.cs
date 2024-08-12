@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EndWall : MonoBehaviour
 {
-    [SerializeField]private Transform lawnMower;
+    private Transform lawnMower;
 
     private bool lawnMowerMove = false;
     private bool lastChance = true;
@@ -17,6 +17,7 @@ public class EndWall : MonoBehaviour
                 lawnMowerMove = true;
                 lawnMower.GetComponent<BoxCollider2D>().enabled = true;
                 lastChance = false;
+                SoundManager.instance.SFXCreate(SoundManager.Clips.lawnmower, 1, 0, transform);
             }
             else
             {
