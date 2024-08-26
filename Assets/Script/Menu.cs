@@ -10,24 +10,67 @@ public class Menu : MonoBehaviour
 
     private Button menu;
 
+    private Button SFX;
+    private Button BGM;
+
+    private Image SFXImage;
+    private Image BGMImage;
+
     private Button reStart;
     private Button quitGame;
     private Button backToGame;
-    
+
     void Start()
     {
         menuTrs = transform.GetChild(1);
         menu = transform.GetChild(0).GetComponent<Button>();
 
-        reStart = menuTrs.GetChild(0).GetComponent<Button>();
-        quitGame =menuTrs.GetChild(1).GetComponent<Button>();
-        backToGame = menuTrs.GetChild(2).GetComponent<Button>();
+        SFX = menuTrs.GetChild(0).GetComponent<Button>();
+        BGM = menuTrs.GetChild(1).GetComponent<Button>();
+        SFXImage = SFX.transform.GetChild(0).GetComponent<Image>();
+        BGMImage = BGM.transform.GetChild(0).GetComponent<Image>();
+
+        reStart = menuTrs.GetChild(2).GetComponent<Button>();
+        quitGame = menuTrs.GetChild(3).GetComponent<Button>();
+        backToGame = menuTrs.GetChild(4).GetComponent<Button>();
 
         menu.onClick.AddListener(btnMenu);
+
+        SFX.onClick.AddListener(btnSFX);
+        BGM.onClick.AddListener(btnBGM);
 
         reStart.onClick.AddListener(btnReStart);
         quitGame.onClick.AddListener(btnQuitGame);
         backToGame.onClick.AddListener(btnBackToGame);
+    }
+
+    private void btnSFX()
+    {
+        if (SFXImage.enabled == false)
+        {
+            SFXImage.enabled = true;
+            SoundManager.instance.SetSFXSound(false);
+        }
+        else
+        {
+            SFXImage.enabled = false;
+            SoundManager.instance.SetSFXSound(true);
+        }
+    }
+
+    private void btnBGM()
+    {
+
+        if(BGMImage.enabled == false)
+        {
+            BGMImage.enabled = true;
+            SoundManager.instance.SetBGMSound(false);
+        }
+        else
+        {
+            BGMImage.enabled = false;
+            SoundManager.instance.SetBGMSound(true);
+        }
     }
 
     private void btnMenu()
@@ -41,7 +84,7 @@ public class Menu : MonoBehaviour
         //현재씬 게임매니저에서 몇번째스테이지인지 체크후 나중에 변수넣어줄것
         Debug.Log("아직 설정안해줌");
         Time.timeScale = 1;
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync(1);
     }
 
     private void btnQuitGame()
@@ -56,5 +99,5 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    
+
 }

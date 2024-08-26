@@ -18,19 +18,27 @@ public class SoundManager : MonoBehaviour
         groan5,
         groan6,
         lawnmower,
+        losemusic,
+        scream,
+        ZombieHit1,
+        ZombieHit2,
+        ZombieHit3,
+        Sun,
+        plantBuy,
+        plantShot1,
+        plantShot2,
     }
 
-    [SerializeField] private AudioSource m_backGroundSource;
-
+    private AudioSource m_backGroundSource;
+    //오디오믹서와 배경음악을 넣어줄것
     [SerializeField] private AudioMixer m_mixer;
     [SerializeField] private AudioClip m_BackGroundClip;
 
-    private GameObject optionObj;
+    private Transform pollingObjParentTrs;//풀링오브젝트의 부모위치
 
-
-    private Transform parentTrs;
-
+    //오디오클립이 들어간 비어있는 오디오소스
     [SerializeField] private GameObject SFXsource;
+    //클립들을 넣어주고 이넘에 클립이랑 이름을똑같이 넣어주어야함
     [SerializeField] private List<AudioClip> clips = new List<AudioClip>();
     [SerializeField] private int poolingCount = 50;
 
@@ -49,7 +57,7 @@ public class SoundManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         StartCoroutine(bgStart());
-        parentTrs = transform.GetChild(0);
+        pollingObjParentTrs = transform.GetChild(0);
         initPoolingClip();
     }
 
@@ -64,9 +72,8 @@ public class SoundManager : MonoBehaviour
         for (int i = 0; poolingCount > i; i++)
         {
             GameObject sfx = Instantiate(SFXsource);
-            sfx.transform.SetParent(parentTrs);
+            sfx.transform.SetParent(pollingObjParentTrs);
             sfx.SetActive(false);
-
         }
     }
 
@@ -78,13 +85,13 @@ public class SoundManager : MonoBehaviour
     }
 
 
-
     /// <summary>
     /// 내부 이넘을 통해서 사용할 클립을 선택, 볼륨 크기 , 사운드의 시작지점
     /// </summary>
     /// <param name="_clip">사용될 소리</param>
     /// <param name="_volum">소리의 크기</param>
     /// <param name="_SFXTime">소리의 크기</param>
+    /// <param name="_parent">오브젝트의 부모</param>
     public void SFXCreate(Clips _clip, float _volum, float _SFXTime, Transform _parent)
     {
         AudioClip clip = clips.Find(x => x.name == _clip.ToString());
@@ -109,17 +116,17 @@ public class SoundManager : MonoBehaviour
 
     private GameObject getPoolingObject(Transform _parent)
     {
-        int parentCount = parentTrs.childCount;
+        int parentCount = pollingObjParentTrs.childCount;
         GameObject obj = null;
         if (parentCount > 0)
         {
-            obj = parentTrs.GetChild(0).gameObject;
+            obj = pollingObjParentTrs.GetChild(0).gameObject;
 
         }
         else
         {
             GameObject sfx = Instantiate(SFXsource);
-            sfx.transform.SetParent(parentTrs);
+            sfx.transform.SetParent(pollingObjParentTrs);
             sfx.SetActive(false);
             obj = sfx;
         }
@@ -132,12 +139,19 @@ public class SoundManager : MonoBehaviour
 
     private void removePooling(GameObject _obj)
     {
-        int parentCount = parentTrs.childCount;
-        if (parentCount < poolingCount)
+
+        //자식의개수가 지정한것보다 부족할시 자식으로 다시넣어준다
+        if (pollingObjParentTrs.childCount < poolingCount)
         {
-            _obj.transform.SetParent(parentTrs);
+            if (_obj == null)
+            {
+                _obj = Instantiate(SFXsource);
+            }
+
+            _obj.transform.SetParent(pollingObjParentTrs);
             _obj.SetActive(false);
             _obj.transform.position = Vector3.zero;
+
         }
         else
         {
@@ -162,4 +176,31 @@ public class SoundManager : MonoBehaviour
         m_backGroundSource.Pause();
     }
 
+    /// <summary>
+    /// true 면 On false 일땐 Off
+    /// </summary>
+    /// <param name="_value"></param>
+    public void SetSFXSound(bool _value)
+    {
+        if (_value)
+        {
+            m_mixer.SetFloat("SFX", 0);
+        }
+        else
+        {
+            m_mixer.SetFloat("SFX", -80);
+        }
+    }
+
+    public void SetBGMSound(bool _value)
+    {
+        if (_value)
+        {
+            m_mixer.SetFloat("BGM", 0);
+        }
+        else
+        {
+            m_mixer.SetFloat("BGM", -80);
+        }
+    }
 }

@@ -19,6 +19,7 @@ public class FailMenu : MonoBehaviour
 
     private void quit()
     {
+        Time.timeScale = 1;
         SceneManager.LoadSceneAsync(0);
     }
 
@@ -43,5 +44,6 @@ public class FailMenu : MonoBehaviour
         Image img = GetComponent<Image>();
         img.enabled = false;
         failMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 }

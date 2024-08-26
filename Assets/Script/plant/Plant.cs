@@ -52,6 +52,16 @@ public class Plant : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > attackDealy)
             {
+                int random = Random.Range(0, 2);
+                if(random == 0)
+                {
+                    SoundManager.instance.SFXCreate(SoundManager.Clips.plantShot1, 0.5f, 0, transform);
+                }
+                else
+                {
+                    SoundManager.instance.SFXCreate(SoundManager.Clips.plantShot2, 0.5f, 0, transform);
+                }
+
                 GameObject bulletObj = Instantiate(bullet);
                 bulletObj.transform.parent = GameManager.instance.GetPlantBulletParent;
                 bulletObj.transform.position = shotTrs.position;

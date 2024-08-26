@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField]private float usingPoint = 0;
+    [SerializeField] private float usingPoint = 0;
     public float GetPoint { get { return usingPoint; } }
 
 
@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform tiles;
     [SerializeField] private LayerMask tileMask;
 
+    private bool soundOff = false;
+    public bool GetSoundOff { get { return soundOff; } }
+
     [SerializeField] private GameObject EndImage;
 
     private void Awake()
@@ -51,7 +54,6 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        //InvokeRepeating("zombieSwpan", 2, 3);
         StartCoroutine(zombieSwpan());
         monsterCount = monsterMax;
         slider.maxValue = monsterMax;
@@ -59,18 +61,24 @@ public class GameManager : MonoBehaviour
 
     IEnumerator zombieSwpan()
     {
-        //좀비 소환쿨타임 
         yield return new WaitForSeconds(2);
-
+        int beforePos = -1;
         for (int i = 0; i < monsterMax; i++)
         {
             monsterCount--;
             int spawnPos = Random.Range(0, spawnTrs.Count);
+            while (beforePos == spawnPos)
+            {
+                spawnPos = Random.Range(0, spawnTrs.Count);
+            }
             int spawnType = Random.Range(0, 3);
             GameObject zombie = Instantiate(monster[spawnType]);
             zombie.transform.position = spawnTrs[spawnPos].position;
             zombie.transform.parent = GameManager.instance.GetMonsterParent;
-            yield return new WaitForSeconds(3);
+            beforePos = spawnPos;
+            float spawnCoolTime = Random.Range(3, 5);
+            //좀비 소환쿨타임 
+            yield return new WaitForSeconds(spawnCoolTime);
         }
     }
 
@@ -109,11 +117,17 @@ public class GameManager : MonoBehaviour
                     plant.GetComponent<Plant>().SetTile(hit);
 
                     hit.transform.GetComponent<tiles>().SetUseTileCheck = true;
+                    SoundManager.instance.SFXCreate(SoundManager.Clips.plantBuy, 0.5f, 0, transform);
                     currentPlant = null;
                     currentPlantSpr = null;
                 }
             }
         }
+    }
+
+    public void GameSave()
+    {
+        //PlayerPrefs.SetInt()
     }
     public void buyPlant(GameObject _plant, Sprite _plantSpr)
     {
@@ -131,6 +145,12 @@ public class GameManager : MonoBehaviour
     {
         usingPoint -= _value;
     }
+
+    public void SetSoundOFF()
+    {
+        soundOff = true;
+    }
+
     public void SetEnd()
     {
         EndImage.SetActive(true);

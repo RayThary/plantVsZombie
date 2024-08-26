@@ -21,20 +21,34 @@ public class monster : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
+            int zombieHit = Random.Range(0, 3);
+            switch (zombieHit)
+            {
+                case 0:
+                    SoundManager.instance.SFXCreate(SoundManager.Clips.ZombieHit1, 0.5f, 0, transform);
+                    break;
+                case 1:
+                    SoundManager.instance.SFXCreate(SoundManager.Clips.ZombieHit2, 0.5f, 0, transform);
+                    break;
+                case 2:
+                    SoundManager.instance.SFXCreate(SoundManager.Clips.ZombieHit3, 0.5f, 0, transform);
+                    break;
+            }
+
             plantBullet plant = collision.GetComponent<plantBullet>();
             float damage = plant.GetBulletDamage;
-            if(plant.GetBulletType == plantBullet.bulletType.ice)
+            if (plant.GetBulletType == plantBullet.bulletType.ice)
             {
                 moveSpeed = moveSpeed / 2;
                 sprControl.SetReturnTime(1f);
                 sprControl.SetIsHit(true, Color.blue);
                 Invoke("returnSpeed", 1f);
-                
+
             }
             hp -= damage;
         }
-        
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Bomb"))
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Bomb"))
         {
             sprControl.SetReturnTime(99);
             sprControl.SetIsHit(true, Color.black);
@@ -73,7 +87,7 @@ public class monster : MonoBehaviour
         }
         move();
         attack();
-        
+
     }
 
     private void move()
@@ -83,7 +97,7 @@ public class monster : MonoBehaviour
             transform.position -= new Vector3(moveSpeed, 0, 0) * Time.deltaTime;
         }
 
-    
+
     }
 
     private void returnSpeed()
@@ -110,11 +124,26 @@ public class monster : MonoBehaviour
         }
     }
 
+    private void soundStop()
+    {
+        if (GameManager.instance.GetSoundOff == true)
+        {
+            AudioSource auido = GetComponentInChildren<AudioSource>();
+            auido.Stop();
+        }
+    }
+
     private void groan()
     {
+
+        if (GameManager.instance.GetSoundOff == true)
+        {
+            CancelInvoke("groan");
+            return;
+        }
         int random = Random.Range(0, 6);
 
-        switch (random) 
+        switch (random)
         {
             case 0:
                 SoundManager.instance.SFXCreate(SoundManager.Clips.groan, 1, 0, transform);

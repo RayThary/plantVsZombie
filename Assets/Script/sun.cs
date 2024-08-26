@@ -79,6 +79,7 @@ public class sun : MonoBehaviour
 
     private void OnMouseDown()
     {
+        SoundManager.instance.SFXCreate(SoundManager.Clips.Sun, 1, 0, GameManager.instance.GetPlantBulletParent);
         GameManager.instance.AddPoint(25);
         Destroy(gameObject);
     }
