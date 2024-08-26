@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform tiles;
     [SerializeField] private LayerMask tileMask;
 
+    private int nowStage = 0;
+    public int GetNowStage { get { return nowStage; } }
     private bool soundOff = false;
     public bool GetSoundOff { get { return soundOff; } }
 
@@ -49,7 +52,9 @@ public class GameManager : MonoBehaviour
         plantParent = transform.GetChild(0);
         plantBulletParent = transform.GetChild(1);
         monsterParent = transform.GetChild(2);
-
+        nowStage = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("Stage", nowStage);
+        PlayerPrefs.Save();
 
     }
     void Start()
