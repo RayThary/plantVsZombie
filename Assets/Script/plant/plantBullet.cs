@@ -23,6 +23,10 @@ public class plantBullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
     void Start()
     {

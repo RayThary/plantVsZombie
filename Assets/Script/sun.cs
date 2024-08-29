@@ -15,12 +15,17 @@ public class sun : MonoBehaviour
 
     private float endPosY;
     [SerializeField] private float rotateSpeed = 1;
+
+    private float timer = 0;
+    private Color sprAlpha;
+    private bool checkAlpha;
     private SpriteRenderer spr;
     private Transform sprTrs;
     void Start()
     {
         spr = GetComponentInChildren<SpriteRenderer>();
         sprTrs = spr.GetComponent<Transform>();
+        sprAlpha = spr.color;
     }
 
     // Update is called once per frame
@@ -28,6 +33,7 @@ public class sun : MonoBehaviour
     {
         sunRotation();
         move();
+        removeSun();
     }
 
     private void sunRotation()
@@ -66,7 +72,7 @@ public class sun : MonoBehaviour
         {
             if (transform.position.y >= endPosY)
             {
-                transform.position -= new Vector3(0, -1, 0) * downSpeed * Time.deltaTime;    
+                transform.position -= new Vector3(0, -1, 0) * downSpeed * Time.deltaTime;
             }
             else
             {
@@ -76,7 +82,43 @@ public class sun : MonoBehaviour
         }
     }
 
+    private void removeSun()
+    {
+        if (noMove)
+        {
+            timer += Time.deltaTime;
+            if (timer > 8)
+            {
+                sunAlpha();
+            }
+            else if(timer > 13)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 
+    private void sunAlpha()
+    {
+        if (sprAlpha.a >= 1)
+        {
+            checkAlpha = false;
+        }
+        else if( sprAlpha.a<0.6f)
+        {
+            checkAlpha = true;
+        }
+
+        if (checkAlpha)
+        {
+        sprAlpha.a += Time.deltaTime;
+        }
+        else
+        {
+            sprAlpha.a -= Time.deltaTime;
+        }
+        spr.color = sprAlpha;
+    }
     private void OnMouseDown()
     {
         SoundManager.instance.SFXCreate(SoundManager.Clips.Sun, 1, 0, GameManager.instance.GetPlantBulletParent);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float usingPoint = 0;
     public float GetPoint { get { return usingPoint; } }
-
+    [SerializeField] private float minSpawnTime = 5;
+    [SerializeField] private float maxSpawnTime = 10;
 
     private GameObject currentPlant;//버튼클릭시 이것을 지정해줄필요있음
     private Sprite currentPlantSpr;
@@ -31,12 +33,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform tiles;
     [SerializeField] private LayerMask tileMask;
 
+
     private int nowStage = 0;
     public int GetNowStage { get { return nowStage; } }
     private bool soundOff = false;
     public bool GetSoundOff { get { return soundOff; } }
 
     [SerializeField] private GameObject EndImage;
+
+    [SerializeField] private Image fadeImage;
+    private float fadeTimer = 0;
+    private Color fadeColor;
+
+    private bool nextStageCheck = false;
 
     private void Awake()
     {
@@ -52,6 +61,9 @@ public class GameManager : MonoBehaviour
         plantParent = transform.GetChild(0);
         plantBulletParent = transform.GetChild(1);
         monsterParent = transform.GetChild(2);
+
+        fadeImage.color = fadeColor;
+
         nowStage = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("Stage", nowStage);
         PlayerPrefs.Save();
@@ -72,36 +84,46 @@ public class GameManager : MonoBehaviour
         {
             monsterCount--;
             int spawnPos = Random.Range(0, spawnTrs.Count);
-            while (beforePos == spawnPos)
+            if (nowStage > 1)
             {
-                spawnPos = Random.Range(0, spawnTrs.Count);
+                while (beforePos == spawnPos)
+                {
+                    spawnPos = Random.Range(0, spawnTrs.Count);
+                }
+
             }
             int spawnType = Random.Range(0, 3);
             GameObject zombie = Instantiate(monster[spawnType]);
             zombie.transform.position = spawnTrs[spawnPos].position;
             zombie.transform.parent = GameManager.instance.GetMonsterParent;
             beforePos = spawnPos;
-            float spawnCoolTime = Random.Range(3, 5);
+            float spawnCoolTime = Random.Range(minSpawnTime, maxSpawnTime);
             //좀비 소환쿨타임 
             yield return new WaitForSeconds(spawnCoolTime);
         }
+        nextStageCheck = true;
     }
 
 
     void Update()
     {
-        mouseCheck();
-
         slider.value = monsterCount;
+        mouseCheck();
+        stageClear();
     }
 
     private void mouseCheck()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
 
-        foreach (Transform tile in tiles)
+        //foreach (Transform tile in tiles)
+        //{
+        //    tile.GetComponent<SpriteRenderer>().enabled = false;
+        //}
+
+        for (int i = 0; i < tiles.childCount; i++)
         {
-            tile.GetComponent<SpriteRenderer>().enabled = false;
+            tiles.GetChild(i).GetComponent<SpriteRenderer>().enabled = false;
         }
 
         if (hit.collider && currentPlant)
@@ -130,10 +152,46 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameSave()
+    private void stageClear()
     {
-        //PlayerPrefs.SetInt()
+        if (nextStageCheck)
+        {
+            if (monsterParent.childCount == 0)
+            {
+
+                fadeTimer += Time.deltaTime;
+                if (fadeTimer > 1)
+                {
+                    fadeImage.gameObject.SetActive(true);
+                    fadeColor.a += Time.deltaTime * 0.5f;
+                    fadeImage.color = fadeColor;
+
+                    if (fadeColor.a >= 1)
+                    {
+                        Invoke("loadScene", 0.5f);
+                        nextStageCheck = false;
+                    }
+                }
+
+            }
+        }
     }
+
+    private void loadScene()
+    {
+        if (fadeColor.a >= 1)
+        {
+            if (nowStage == 3)
+            {
+                SceneManager.LoadSceneAsync(0);
+            }
+            else
+            {
+                SceneManager.LoadSceneAsync(nowStage + 1);
+            }
+        }
+    }
+
     public void buyPlant(GameObject _plant, Sprite _plantSpr)
     {
         currentPlant = _plant;

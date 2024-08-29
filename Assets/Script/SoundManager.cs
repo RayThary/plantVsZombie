@@ -42,7 +42,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private List<AudioClip> clips = new List<AudioClip>();
     [SerializeField] private int poolingCount = 50;
 
-
+    private bool bgSoundCheck = false;
 
     private void Awake()
     {
@@ -56,7 +56,7 @@ public class SoundManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        StartCoroutine(bgStart());
+        //StartCoroutine(bgStart());
         pollingObjParentTrs = transform.GetChild(0);
         initPoolingClip();
     }
@@ -67,6 +67,23 @@ public class SoundManager : MonoBehaviour
 
     }
 
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            bgSoundPause();
+            bgSoundCheck = false;
+        }
+        else
+        {
+            if (bgSoundCheck == false)
+            {
+                bgSoundCheck = true;
+                StartCoroutine(bgStart());
+            }
+        }
+    }
     private void initPoolingClip()
     {
         for (int i = 0; poolingCount > i; i++)
