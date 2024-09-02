@@ -116,11 +116,6 @@ public class GameManager : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
 
-        //foreach (Transform tile in tiles)
-        //{
-        //    tile.GetComponent<SpriteRenderer>().enabled = false;
-        //}
-
         for (int i = 0; i < tiles.childCount; i++)
         {
             tiles.GetChild(i).GetComponent<SpriteRenderer>().enabled = false;

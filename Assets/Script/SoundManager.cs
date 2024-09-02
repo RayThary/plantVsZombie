@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
@@ -107,7 +106,7 @@ public class SoundManager : MonoBehaviour
     /// </summary>
     /// <param name="_clip">사용될 소리</param>
     /// <param name="_volum">소리의 크기</param>
-    /// <param name="_SFXTime">소리의 크기</param>
+    /// <param name="_SFXTime">소리의 시작지점</param>
     /// <param name="_parent">오브젝트의 부모</param>
     public void SFXCreate(Clips _clip, float _volum, float _SFXTime, Transform _parent)
     {

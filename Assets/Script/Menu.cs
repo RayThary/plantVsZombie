@@ -80,9 +80,7 @@ public class Menu : MonoBehaviour
     }
 
     private void btnReStart()
-    {
-        //현재씬 게임매니저에서 몇번째스테이지인지 체크후 나중에 변수넣어줄것
-        Debug.Log("아직 설정안해줌");
+    {   
         Time.timeScale = 1;
         SceneManager.LoadSceneAsync(1);
     }

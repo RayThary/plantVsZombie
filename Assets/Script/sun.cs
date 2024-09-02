@@ -91,7 +91,7 @@ public class sun : MonoBehaviour
             {
                 sunAlpha();
             }
-            else if(timer > 13)
+            else if (timer > 13)
             {
                 Destroy(gameObject);
             }
@@ -104,14 +104,14 @@ public class sun : MonoBehaviour
         {
             checkAlpha = false;
         }
-        else if( sprAlpha.a<0.6f)
+        else if (sprAlpha.a < 0.6f)
         {
             checkAlpha = true;
         }
 
         if (checkAlpha)
         {
-        sprAlpha.a += Time.deltaTime;
+            sprAlpha.a += Time.deltaTime;
         }
         else
         {
@@ -119,12 +119,9 @@ public class sun : MonoBehaviour
         }
         spr.color = sprAlpha;
     }
-    private void OnMouseDown()
-    {
-        SoundManager.instance.SFXCreate(SoundManager.Clips.Sun, 1, 0, GameManager.instance.GetPlantBulletParent);
-        GameManager.instance.AddPoint(25);
-        Destroy(gameObject);
-    }
+
+
+   
     public void SetEndPosY(float _y)
     {
         endPosY = _y;
@@ -132,5 +129,11 @@ public class sun : MonoBehaviour
     public void SetIsPlant(bool _value)
     {
         isPlant = _value;
+    }
+    public void DestroySun()
+    {
+        SoundManager.instance.SFXCreate(SoundManager.Clips.Sun, 1, 0, GameManager.instance.GetPlantBulletParent);
+        GameManager.instance.AddPoint(25);
+        Destroy(gameObject);
     }
 }
