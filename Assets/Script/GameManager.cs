@@ -123,9 +123,9 @@ public class GameManager : MonoBehaviour
 
         if (hit.collider && currentPlant)
         {
-            if (hit.transform.GetComponent<tiles>().GetUseTileCheck == false)
+            tiles tile = hit.transform.GetComponent<tiles>();
+            if (tile.GetUseTileCheck == false && tile.GetTileOnMonster == false)
             {
-
                 hit.collider.GetComponent<SpriteRenderer>().sprite = currentPlantSpr;
                 hit.collider.GetComponent<SpriteRenderer>().enabled = true;
 
