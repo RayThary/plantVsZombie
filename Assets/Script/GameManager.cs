@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxSpawnTime = 10;
 
     private GameObject currentPlant;//버튼클릭시 이것을 지정해줄필요있음
+    public GameObject GetCurrentPlant { get { return currentPlant; } }
     private Sprite currentPlantSpr;
 
     private Transform plantParent;

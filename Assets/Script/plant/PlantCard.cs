@@ -38,6 +38,10 @@ public class PlantCard : MonoBehaviour
 
     private void buyPlant()
     {
+        if (GameManager.instance.GetCurrentPlant != null)
+        {
+            return;
+        }
         if (GameManager.instance.GetPoint >= m_price)
         {
             GameManager.instance.MinusPoint(m_price);
