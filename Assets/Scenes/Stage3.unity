@@ -6073,7 +6073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -90}
+  m_AnchoredPosition: {x: 450, y: -80}
   m_SizeDelta: {x: 900, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &908633866
@@ -6847,11 +6847,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d090f24d7cb0b41be7ddd970b3f04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usingPoint: 500
+  usingPoint: 0
   minSpawnTime: 5
-  maxSpawnTime: 10
+  maxSpawnTime: 13
   slider: {fileID: 1775581462}
-  monsterMax: 20
+  monsterMax: 30
   spawnTrs:
   - {fileID: 15558036}
   - {fileID: 1501079755}
@@ -11199,7 +11199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -213, y: 50}
+  m_AnchoredPosition: {x: -212.625, y: 50}
   m_SizeDelta: {x: 425.25, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1776171822
